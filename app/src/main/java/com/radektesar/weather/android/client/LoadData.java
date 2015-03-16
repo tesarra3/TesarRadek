@@ -12,7 +12,7 @@ import com.radektesar.weather.android.client.response.WorldWeatherOnlineResponse
 import com.radektesar.weather.android.database.DatabaseManager;
 import com.radektesar.weather.android.database.model.Forecast;
 import com.radektesar.weather.android.database.model.Store;
-import com.radektesar.weather.android.fragment.ForecastFragment;
+import com.radektesar.weather.android.fragment.ForecastListFragment;
 import com.radektesar.weather.android.fragment.TodayFragment;
 import com.radektesar.weather.android.geolocation.MyLocationListener;
 
@@ -172,8 +172,8 @@ public class LoadData extends AsyncTask<String, String, String>
             Toast.makeText(mParents, "Server doesnt work", Toast.LENGTH_LONG);
 
         }
-        ForecastFragment mForecastFragment = new ForecastFragment();
-        mForecastFragment.onResume();
+        ForecastListFragment mForecastListFragment = new ForecastListFragment();
+        mForecastListFragment.onResume();
         mFinishThear = true;
 
     }

@@ -19,7 +19,7 @@ import android.widget.ListView;
 import com.radektesar.weather.android.R;
 import com.radektesar.weather.android.adapter.NavDrawerListAdapter;
 import com.radektesar.weather.android.dialog.AbouttDialog;
-import com.radektesar.weather.android.fragment.ForecastFragment;
+import com.radektesar.weather.android.fragment.ForecastListFragment;
 import com.radektesar.weather.android.fragment.TodayFragment;
 import com.radektesar.weather.android.model.NavDrawerItem;
 
@@ -87,6 +87,8 @@ public class MainActivity extends Activity {
         navDrawerItems.add(new NavDrawerItem(mNavMenuTitles[0], navMenuIcons.getResourceId(0, -1)));
         // Forecast
         navDrawerItems.add(new NavDrawerItem(mNavMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
+
+        //navDrawerItems.add(new NavDrawerItem(mNavMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
 
        // navDrawerItems.add(new NavDrawerItem(mNavMenuTitles[3], navMenuIcons.getResourceId(3, -1), true, "22"));
 
@@ -194,8 +196,12 @@ public class MainActivity extends Activity {
                 fragment = new TodayFragment();
                 break;
             case 1:
-                fragment = new ForecastFragment();
+                fragment = new ForecastListFragment();
                 break;
+
+//            case 2:
+//                fragment = new GraphFragment();
+//                break;
 
             default:
                 break;

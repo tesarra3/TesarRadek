@@ -22,7 +22,7 @@ import butterknife.InjectView;
 /**
  * Created by Radek on 10. 3. 2015.
  */
-public class ForecastFragment extends Fragment {
+public class ForecastListFragment extends Fragment {
 
 
     @InjectView(R.id.forecastListView)
@@ -31,7 +31,7 @@ public class ForecastFragment extends Fragment {
 
     private MainActivity parent;
 
-    public ForecastFragment(){}
+    public ForecastListFragment(){}
     private ForecastAdapter mForecastAdapter;
     DatabaseManager mDatabaseManager = new DatabaseManager(RadkeTesarApplication.getAppContext());
 
@@ -55,7 +55,7 @@ public class ForecastFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
 
-        ButterKnife.inject(ForecastFragment.this, view);
+        ButterKnife.inject(ForecastListFragment.this, view);
 
 
 

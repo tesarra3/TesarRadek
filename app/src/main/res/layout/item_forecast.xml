@@ -44,7 +44,7 @@
                 android:layout_gravity="left|bottom"
                 android:gravity="left|center_vertical">
 
-                <TextView
+                <com.radektesar.weather.android.view.RobotoLightTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -70,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="15">
 
-                    <TextView
+                    <com.radektesar.weather.android.view.RobotoMediumTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -88,7 +88,7 @@
                     android:layout_weight="10"
                     android:layout_gravity="bottom">
 
-                    <TextView
+                    <com.radektesar.weather.android.view.RobotoMediumTextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:textAppearance="?android:attr/textAppearanceLarge"
