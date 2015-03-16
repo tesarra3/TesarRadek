@@ -1,0 +1,40 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Per the design guidelines, navigation drawers should be between 240dp and 320dp:
+         https://developer.android.com/design/patterns/navigation-drawer.html -->
+    <dimen name="navigation_drawer_width">240dp</dimen>
+
+    <dimen name="titleTobBar">18dp</dimen>
+    <dimen name="sideMenuItem1">22dp</dimen>
+    <dimen name="sideMenuItem2">22dp</dimen>
+
+    <dimen name="forecastDay">33dp</dimen>
+    <dimen name="forecastCondition">18dp</dimen>
+    <dimen name="forecastTemperature">33dp</dimen>
+
+    <dimen name="todayStateCity">12dp</dimen>
+    <dimen name="todayTemperatureCondition">33dp</dimen>
+    <dimen name="todayInformations">20dp</dimen>
+
+    <dimen name="padding">30dp</dimen>
+    <dimen name="line">2dp</dimen>
+    <dimen name="padding_forecast_picture">17dp</dimen>
+
+    <dimen name="widthImageDrawer">25dp</dimen>
+    <dimen name="marginImageDrawer">12dp</dimen>
+    <dimen name="paddingText">40dp</dimen>
+    <dimen name="marginText">8dp</dimen>
+    <dimen name="RalativeToday">122dp</dimen>
+    <dimen name="PaddingMainIconeToday">18dp</dimen>
+    <dimen name="LinesOfInformationToday">300dp</dimen>
+    <dimen name="boxOfInfoToday">108dp</dimen>
+
+    <dimen name="SecondLineInformationToday">208dp</dimen>
+
+
+
+</resources>

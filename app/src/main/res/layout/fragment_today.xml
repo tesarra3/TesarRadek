@@ -1,0 +1,217 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:layout_width="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/RalativeToday">
+
+        <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/PaddingMainIconeToday"
+        android:id="@+id/TodayIcon"
+        android:layout_centerInParent="true"
+
+             />
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/overlay_weather_status_today"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.33">
+
+        <com.radektesar.weather.myapplication.view.RobotoLightTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/TodayCityState"
+            android:gravity="center"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:hint="Prague, Czech Republic"
+            android:textSize="@dimen/todayStateCity" />
+
+        <com.radektesar.weather.myapplication.view.RobotoLightTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/TodayTemperatureCondition"
+            android:layout_below="@+id/TodayCityState"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/todayTemperatureCondition"
+            android:hint="25°C | Sunny" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/LinesOfInformationToday">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/boxOfInfoToday"
+                android:layout_weight="1">
+
+                <ImageView
+
+                    android:id="@+id/imageView"
+                    android:src="@drawable/ic_weather_humidity"
+                    style="@style/TodayInformationImage"
+                    android:layout_above="@+id/TodayHumidity"
+                    />
+
+                <com.radektesar.weather.myapplication.view.RobotoMediumTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/TodayHumidity"
+                    android:gravity="center"
+                    android:hint="57%"
+                    style="@style/TodayInformationText"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/boxOfInfoToday"
+                android:layout_weight="1"
+                >
+
+                <ImageView
+                    style="@style/TodayInformationImage"
+                    android:layout_above="@+id/TodayPrecipitation"
+                    android:src="@drawable/ic_weather_precipitation"
+                    android:id="@+id/imageView2" />
+
+                <com.radektesar.weather.myapplication.view.RobotoMediumTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/TodayPrecipitation"
+                    style="@style/TodayInformationText"
+                    android:hint="0.0 mm" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/boxOfInfoToday"
+                android:layout_weight="1">
+
+                <ImageView
+                    style="@style/TodayInformationImage"
+                    android:layout_above="@+id/TodayPresure"
+
+                    android:src="@drawable/ic_weather_pressure" />
+
+                <com.radektesar.weather.myapplication.view.RobotoMediumTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/TodayPresure"
+                    style="@style/TodayInformationText"
+                    android:hint="1019 hPa" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/SecondLineInformationToday"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/boxOfInfoToday"
+                android:layout_weight="1">
+
+                <ImageView
+
+                    android:src="@drawable/ic_weather_wind_speed"
+                    style="@style/TodayInformationImage"
+                    android:id="@+id/ViewTodayWindSpeed"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="60dp" />
+
+
+                <com.radektesar.weather.myapplication.view.RobotoMediumTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TodayWindSpeed"
+
+                    android:hint="20 km/h"
+                    style="@style/TodayInformationText"
+                    android:layout_below="@+id/ViewTodayWindSpeed"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/boxOfInfoToday"
+                android:layout_weight="1">
+
+                <ImageView
+
+
+                    android:src="@drawable/ic_weather_direction"
+                    android:id="@+id/imageView3"
+                    style="@style/TodayInformationImage"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_alignRight="@+id/TodayDiction"
+                    android:layout_alignEnd="@+id/TodayDiction" />
+
+                <com.radektesar.weather.myapplication.view.RobotoMediumTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/TodayDiction"
+                    android:hint="SE"
+                    android:gravity="center"
+                    style="@style/TodayInformationText"
+                    android:layout_below="@+id/imageView3"
+                    android:layout_toRightOf="@+id/viewFlipper"
+                    android:layout_marginLeft="60dp" />
+
+                <ViewFlipper
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/viewFlipper"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

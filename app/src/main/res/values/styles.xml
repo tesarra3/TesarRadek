@@ -1,0 +1,58 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme"  parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <!-- ActionBar styles -->
+
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.ActionBar">
+        <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>
+        <item name="android:background">@drawable/action_bars</item>
+
+        <!-- Support library compatibility -->
+        <item name="background">@drawable/action_bars</item>
+        <item name="titleTextStyle">@style/MyActionBarTitleText</item>
+    </style>
+
+    <style name="MyActionBarTitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/titleTobBarText</item>
+        <item name="android:textSize">@dimen/titleTobBar</item>
+        <!-- The textColor property is backward compatible with the Support Library -->
+    </style>
+
+    <style name="TodayInformationText" >
+        <item name="android:textSize">@dimen/todayInformations</item>
+        <item name="android:textColor">@color/todayInformations</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="TodayInformationImage">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+
+
+    </style>
+
+    <style name="dialog" parent="Base.Theme.AppCompat.Dialog">
+        <item name="android:padding">30dp</item>
+        <item name="android:textColorHighlight">@color/noticationBar</item>
+        <item name="android:textColorLink">@color/actionBar</item>
+    </style>
+
+</resources>

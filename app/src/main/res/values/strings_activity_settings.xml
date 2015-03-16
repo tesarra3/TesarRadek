@@ -1,0 +1,29 @@
+<resources>
+
+
+    <string name="pref_title_lenght_units">Units of speed</string>
+<string-array name="pref_lenght_units_list_titles">
+<item>Meters</item>
+<item>Miles</item>
+</string-array>
+
+    <string name="pref_title_tempriture_units">Units of tempriture</string>
+<string-array name="pref_tempriture_units_list_titles">
+    <item>Celsius</item>
+<item>Fahrenheit</item>
+
+</string-array>
+
+
+
+    <string-array name="pref_lenght_units_list_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+
+    <string-array name="pref_tempriture_units_list_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+</resources>
