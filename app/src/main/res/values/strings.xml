@@ -17,6 +17,8 @@
         <item>@drawable/ic_drawer_today_dark</item>
         <item>@drawable/ic_drawer_forecast_dark</item>
         <item>@drawable/ic_drawer_forecast_dark</item>
+        <item>@drawable/ic_drawer_forecast_dark</item>
+        <item>@drawable/ic_drawer_forecast_dark</item>
 
 
 </array>
@@ -31,7 +33,7 @@
     <string-array name="nav_drawer_items">
         <item>Today</item>
         <item>Forecast</item>
-        <item>Graph</item>
+
     </string-array>
 
 

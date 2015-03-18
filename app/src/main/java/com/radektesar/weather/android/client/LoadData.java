@@ -7,8 +7,8 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.radektesar.weather.android.RadkeTesarApplication;
+import com.radektesar.weather.android.client.Response.WorldWeatherOnlineResponse;
 import com.radektesar.weather.android.client.parser.JSONParser;
-import com.radektesar.weather.android.client.response.WorldWeatherOnlineResponse;
 import com.radektesar.weather.android.database.DatabaseManager;
 import com.radektesar.weather.android.database.model.Forecast;
 import com.radektesar.weather.android.database.model.Store;
@@ -22,34 +22,34 @@ import java.sql.SQLException;
 import java.util.Calendar;
 
 /**
- * Created by Radek on 13. 3. 2015.
+ * Created by Radek on 18. 3. 2015.
  */
 public class LoadData extends AsyncTask<String, String, String>
 
-    {
+{
 
-        JSONParser mJsonParser = new JSONParser();
-        public WorldWeatherOnlineResponse mJsonUsers;
-        private Context mParents = RadkeTesarApplication.getAppContext();
-        public Boolean mFinishThear = false;
-        MyLocationListener mMyLocationListener = new MyLocationListener();
-        String mParams = null;
-        boolean mConnection;
-        Store mStore = new Store();
-        Forecast mForecast = new Forecast();
-        Gson gson = new Gson();
-
-
-        private String url = "https://api2.worldweatheronline.com/free/v2/weather.ashx";
-        private String ApiKey = "f8d4ac2a64026269fc77d9ac39b5d";
-        private String Forecast = "5";
+    JSONParser mJsonParser = new JSONParser();
+    public WorldWeatherOnlineResponse mJsonUsers;
+    private Context mParents = RadkeTesarApplication.getAppContext();
+    public Boolean mFinishThear = false;
+    MyLocationListener mMyLocationListener = new MyLocationListener();
+    String mParams = null;
+    boolean mConnection;
+    Store mStore = new Store();
+    Forecast mForecast = new Forecast();
+    Gson gson = new Gson();
 
 
+    private String url = "https://api.worldweatheronline.com/free/v2/weather.ashx";
+    private String ApiKey = "f8d4ac2a64026269fc77d9ac39b5d";
+    private String Forecast = "5";
 
 
 
-        @Override
-        protected void onPreExecute () {
+
+
+    @Override
+    protected void onPreExecute () {
         super.onPreExecute();
 
 
@@ -75,14 +75,14 @@ public class LoadData extends AsyncTask<String, String, String>
         // check if server responed
         if(json != null){
             Log.d("Server Response: ", json.toString());
-        // fix the case when server dont response or user is over access (free Api licence)
+            // fix the case when server dont response or user is over access (free Api licence)
             if (json.toString().length() >= 500) {
 
-             // mapping json into models
-            mJsonUsers = gson.fromJson(json.toString(), WorldWeatherOnlineResponse.class);
-            // set up controler for knowing if json was accepted
-            mConnection = true;
-             }
+                // mapping json into models
+                mJsonUsers = gson.fromJson(json.toString(), WorldWeatherOnlineResponse.class);
+                // set up controler for knowing if json was accepted
+                mConnection = true;
+            }
 
         }
         return null;
@@ -122,8 +122,8 @@ public class LoadData extends AsyncTask<String, String, String>
 
                 for (int i = 0; i <= 4; i++) {
                     mForecast.setForecastDayOfWeek(checkDay(i, mParents));
-                    mForecast.setForecastTempritureC(mJsonUsers.getData().getWeather().get(i).getMaxtempC());
-                    mForecast.setForecastTempritureF(mJsonUsers.getData().getWeather().get(i).getMaxtempF());
+                    mForecast.setForecastTempritureC(mJsonUsers.getData().getWeather().get(i).getMaxtempC() + "°C");
+                    mForecast.setForecastTempritureF(mJsonUsers.getData().getWeather().get(i).getMaxtempF() + "°F");
                     mForecast.setForecastDescription(mJsonUsers.getData().getWeather().get(i).getHourly().get(2).getWeatherDesc().get(0).getValue());
                     mForecast.setForecastUrl(mJsonUsers.getData().getWeather().get(i).getHourly().get(2).getWeatherIconUrl().get(0).getValue());
 
@@ -137,9 +137,9 @@ public class LoadData extends AsyncTask<String, String, String>
             } else {
                 for (int i = 0; i <= 4; i++) {
                     mForecast.setForecastDayOfWeek(checkDay(i, mParents));
-                    mForecast.setForecastTempritureC(mJsonUsers.getData().getWeather().get(i).getMaxtempC());
+                    mForecast.setForecastTempritureC(mJsonUsers.getData().getWeather().get(i).getMaxtempC() + "°C");
                     mForecast.setForecastDescription(mJsonUsers.getData().getWeather().get(i).getHourly().get(2).getWeatherDesc().get(0).getValue());
-                    mForecast.setForecastTempritureF(mJsonUsers.getData().getWeather().get(i).getMaxtempF());
+                    mForecast.setForecastTempritureF(mJsonUsers.getData().getWeather().get(i).getMaxtempF() + "°F");
                     mForecast.setForecastUrl(mJsonUsers.getData().getWeather().get(i).getHourly().get(2).getWeatherIconUrl().get(0).getValue());
 
                     try {
@@ -164,7 +164,7 @@ public class LoadData extends AsyncTask<String, String, String>
 
             new TodayFragment();
 
-
+            new ForecastListFragment();
 
 
         }else{
@@ -172,8 +172,7 @@ public class LoadData extends AsyncTask<String, String, String>
             Toast.makeText(mParents, "Server doesnt work", Toast.LENGTH_LONG);
 
         }
-        ForecastListFragment mForecastListFragment = new ForecastListFragment();
-        mForecastListFragment.onResume();
+
         mFinishThear = true;
 
     }
@@ -237,3 +236,4 @@ public class LoadData extends AsyncTask<String, String, String>
 
 
 }
+

@@ -18,7 +18,7 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
 /**
- * Created by Radek on 11. 3. 2015.
+ * Created by Radek on 18. 3. 2015.
  */
 public class JSONParser {
 
@@ -71,10 +71,10 @@ public class JSONParser {
                 HttpResponse httpResponse = httpClient.execute(httpGet);
 //                HttpEntity httpEntity = httpResponse.getEntity();
 //                sIs = httpEntity.getContent();
-                  sIs = httpResponse.getEntity().getContent();
+                sIs = httpResponse.getEntity().getContent();
 
                 //Set as true when server are responding
-                    sDone = true;
+                sDone = true;
             }
 
 
@@ -90,39 +90,39 @@ public class JSONParser {
 
         }
         //Fix of httpResponse
-if (sDone) {
-    try {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(sIs, "iso-8859-1"), 8);
-        StringBuilder sb = new StringBuilder();
-        String line = null;
-        while ((line = reader.readLine()) != null) {
-            sb.append(line + "\n");
+        if (sDone) {
+            try {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(sIs, "iso-8859-1"), 8);
+                StringBuilder sb = new StringBuilder();
+                String line = null;
+                while ((line = reader.readLine()) != null) {
+                    sb.append(line + "\n");
+                }
+                sIs.close();
+                sJson = sb.toString();
+            } catch (Exception e) {
+                Log.e("Buffer Error", "Error converting result " + e.toString());
+            }
+
+            // try parse the string to a JSON object
+            try {
+                if (sJson == null) {
+
+                    sJObj = new JSONObject("doesntWork");
+                } else {
+                    sJObj = new JSONObject(sJson);
+                }
+            } catch (JSONException e) {
+                Log.e("JSON Parser", "Error parsing data " + e.toString());
+            }
+        }else{
+            try {
+                sJObj = new JSONObject().put("JSON", "Hello, World!");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
         }
-        sIs.close();
-        sJson = sb.toString();
-    } catch (Exception e) {
-        Log.e("Buffer Error", "Error converting result " + e.toString());
-    }
-
-    // try parse the string to a JSON object
-    try {
-        if (sJson == null) {
-
-            sJObj = new JSONObject("doesntWork");
-        } else {
-            sJObj = new JSONObject(sJson);
-        }
-    } catch (JSONException e) {
-        Log.e("JSON Parser", "Error parsing data " + e.toString());
-    }
-}else{
-    try {
-        sJObj = new JSONObject().put("JSON", "Hello, World!");
-    } catch (JSONException e) {
-        e.printStackTrace();
-    }
-
-}
 
         // return JSON String
         return sJObj;

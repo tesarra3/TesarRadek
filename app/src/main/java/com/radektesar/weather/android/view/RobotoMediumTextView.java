@@ -5,6 +5,9 @@ import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
+/**
+ * Created by Radek on 18. 3. 2015.
+ */
 public class RobotoMediumTextView extends TextView {
 
     public RobotoMediumTextView(Context context, AttributeSet attrs, int defStyle) {
@@ -27,5 +30,3 @@ public class RobotoMediumTextView extends TextView {
         setTypeface(font);
     }
 }
-
-

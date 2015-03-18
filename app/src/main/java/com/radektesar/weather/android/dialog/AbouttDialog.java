@@ -11,11 +11,10 @@ import android.widget.TextView;
 
 import com.radektesar.weather.android.R;
 
-
 /**
- * Created by Radek on 12. 3. 2015.
+ * Created by Radek on 18. 3. 2015.
  */
-    public class AbouttDialog extends DialogFragment {
+public class AbouttDialog extends DialogFragment {
 
 
 
@@ -45,7 +44,7 @@ import com.radektesar.weather.android.R;
                         // sign in the user ...
 
                         AbouttDialog.this.getDialog().cancel();
-       }//set title of dialog
+                    }//set title of dialog
                 }).setTitle(R.string.dialog_title);
 
 

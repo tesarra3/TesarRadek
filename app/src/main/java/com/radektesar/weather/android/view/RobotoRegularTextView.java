@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.widget.TextView;
 
 /**
- * Created by Radek on 15. 3. 2015.
+ * Created by Radek on 18. 3. 2015.
  */
 public class RobotoRegularTextView extends TextView {
 
@@ -30,4 +30,3 @@ public class RobotoRegularTextView extends TextView {
         setTypeface(font);
     }
 }
-

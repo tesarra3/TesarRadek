@@ -13,10 +13,9 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Locale;
 
-
 /**
-* Created by Radek on 12. 3. 2015.
-*/
+ * Created by Radek on 18. 3. 2015.
+ */
 public class DatabaseManager implements Serializable {
 
     private Context mContext;
@@ -29,7 +28,7 @@ public class DatabaseManager implements Serializable {
         db.setLocale(new Locale("cz_CZ"));
     }
 
-// Getters and setters for database
+    // Getters and setters for database
     private Dao<Store, Integer> getStoresDao() throws SQLException {
         return mHelper.getDao(Store.class);
     }

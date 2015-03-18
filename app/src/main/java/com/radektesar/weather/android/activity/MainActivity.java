@@ -17,20 +17,23 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.radektesar.weather.android.R;
+
 import com.radektesar.weather.android.adapter.NavDrawerListAdapter;
 import com.radektesar.weather.android.dialog.AbouttDialog;
 import com.radektesar.weather.android.fragment.ForecastListFragment;
 import com.radektesar.weather.android.fragment.TodayFragment;
 import com.radektesar.weather.android.model.NavDrawerItem;
 
+import static com.radektesar.weather.android.R.id.frame_container;
+import static com.radektesar.weather.android.R.id.action_about;
+import static com.radektesar.weather.android.R.id.action_settings;
+
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-import static com.radektesar.weather.android.R.id.action_about;
-import static com.radektesar.weather.android.R.id.action_settings;
-import static com.radektesar.weather.android.R.id.frame_container;
+
 
 
 public class MainActivity extends Activity {

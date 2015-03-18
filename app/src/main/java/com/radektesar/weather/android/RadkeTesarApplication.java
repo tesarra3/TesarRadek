@@ -7,9 +7,8 @@ import android.widget.Toast;
 
 import com.radektesar.weather.android.client.LoadData;
 
-
 /**
- * Created by Radek on 13. 3. 2015.
+ * Created by Radek on 18. 3. 2015.
  */
 public class RadkeTesarApplication extends Application {
 
@@ -20,21 +19,21 @@ public class RadkeTesarApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-            // before first  activity load data
+        // before first  activity load data
 
-            //check network and set up asyncTask
-            RadkeTesarApplication.context = getApplicationContext();
-            if(isNetworkAvailable(getApplicationContext())){
+        //check network and set up asyncTask
+        RadkeTesarApplication.context = getApplicationContext();
+        if(isNetworkAvailable(getApplicationContext())){
 
 
-             new LoadData().execute();
+            new LoadData().execute();
 
-            }else{
+        }else{
 
-                toastTool(getApplicationContext(),getResources().getString(R.string.no_internet));
+            toastTool(getApplicationContext(),getResources().getString(R.string.no_internet));
 
-            }
         }
+    }
 
 
     // set up context for hole applinacation

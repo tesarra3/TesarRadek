@@ -13,8 +13,8 @@ import com.radektesar.weather.android.database.model.Store;
 import java.sql.SQLException;
 
 /**
-* Created by Radek on 12. 3. 2015.
-*/
+ * Created by Radek on 18. 3. 2015.
+ */
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
 
@@ -30,8 +30,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     public void onCreate(SQLiteDatabase database, ConnectionSource connectionSource) {
         try {
 
-              TableUtils.createTable(connectionSource, Store.class);
-               TableUtils.createTable(connectionSource, Forecast.class);
+            TableUtils.createTable(connectionSource, Store.class);
+            TableUtils.createTable(connectionSource, Forecast.class);
 
 
 
@@ -50,6 +50,3 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     }
 
 }
-
-
-

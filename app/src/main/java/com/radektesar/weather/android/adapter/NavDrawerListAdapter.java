@@ -15,7 +15,7 @@ import com.radektesar.weather.android.model.NavDrawerItem;
 import java.util.ArrayList;
 
 /**
- * Created by Radek on 10. 3. 2015.
+ * Created by Radek on 18. 3. 2015.
  */
 public class NavDrawerListAdapter extends BaseAdapter {
 
@@ -70,5 +70,3 @@ public class NavDrawerListAdapter extends BaseAdapter {
     }
 
 }
-
-

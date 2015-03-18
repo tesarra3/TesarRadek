@@ -20,7 +20,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 /**
- * Created by Radek on 10. 3. 2015.
+ * Created by Radek on 18. 3. 2015.
  */
 public class ForecastListFragment extends Fragment {
 
@@ -31,26 +31,30 @@ public class ForecastListFragment extends Fragment {
 
     private MainActivity parent;
 
-    public ForecastListFragment(){}
+    public ForecastListFragment() {
+    }
+
     private ForecastAdapter mForecastAdapter;
     DatabaseManager mDatabaseManager = new DatabaseManager(RadkeTesarApplication.getAppContext());
-
 
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        parent = (MainActivity)activity;
+        parent = (MainActivity) activity;
     }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_forecast, container, false);
     }
+
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
@@ -58,21 +62,38 @@ public class ForecastListFragment extends Fragment {
         ButterKnife.inject(ForecastListFragment.this, view);
 
 
-
-           //Call adapter(database model Forest)
-       try {
-            mForecastAdapter = new ForecastAdapter(parent,mDatabaseManager.getForecasts());
+        //Call adapter(database model Forest)
+        try {
+            mForecastAdapter = new ForecastAdapter(parent, mDatabaseManager.getForecasts());
         } catch (SQLException e) {
             e.printStackTrace();
         }
         forecastListView.setAdapter(mForecastAdapter);
 
 
-
-
     }
 
 
+    //Set up views when fragment is open
+    @Override
+    public void onResume() {
+        super.onResume();
+        refreshList();
+    }
+
+    // update
+    private void refreshList() {
+        try {
+            mForecastAdapter = new ForecastAdapter(parent, mDatabaseManager.getForecasts());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        forecastListView.setAdapter(mForecastAdapter);
 
 
+    }
 }
+
+
+
+

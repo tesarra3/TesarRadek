@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.j256.ormlite.field.DatabaseField;
 
 /**
- * Created by Radek on 13. 3. 2015.
+ * Created by Radek on 18. 3. 2015.
  */
 public class Forecast {
 
@@ -73,3 +73,4 @@ public class Forecast {
         this.forecastUrl = forecastUrl;
     }
 }
+

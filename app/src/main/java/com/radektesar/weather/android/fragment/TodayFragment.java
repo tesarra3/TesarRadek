@@ -20,9 +20,8 @@ import java.sql.SQLException;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-
 /**
- * Created by Radek on 10. 3. 2015.
+ * Created by Radek on 18. 3. 2015.
  */
 public class TodayFragment extends Fragment {
 
@@ -138,13 +137,3 @@ public class TodayFragment extends Fragment {
 
     }
 }
-
-
-
-
-
-
-
-
-
-

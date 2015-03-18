@@ -1,7 +1,7 @@
 package com.radektesar.weather.android.model;
 
 /**
- * Created by Radek on 10. 3. 2015.
+ * Created by Radek on 18. 3. 2015.
  */
 public class NavDrawerItem {
 
@@ -57,4 +57,3 @@ public class NavDrawerItem {
         this.isCounterVisible = isCounterVisible;
     }
 }
-

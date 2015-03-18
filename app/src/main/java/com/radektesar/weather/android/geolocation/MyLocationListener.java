@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Locale;
 
 /**
- * Created by Radek on 12. 3. 2015.
+ * Created by Radek on 18. 3. 2015.
  */
 public class MyLocationListener implements LocationListener {
 
@@ -21,7 +21,7 @@ public class MyLocationListener implements LocationListener {
     public String mNameOfCity = "";
     public LocationManager mLocationManager;
 
-     Location mLocation;
+    Location mLocation;
 
 
 
