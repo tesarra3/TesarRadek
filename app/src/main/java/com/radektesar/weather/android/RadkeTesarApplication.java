@@ -5,7 +5,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.widget.Toast;
 
-import com.radektesar.weather.android.client.LoadData;
+
 
 /**
  * Created by Radek on 18. 3. 2015.
@@ -22,17 +22,7 @@ public class RadkeTesarApplication extends Application {
         // before first  activity load data
 
         //check network and set up asyncTask
-        RadkeTesarApplication.context = getApplicationContext();
-        if(isNetworkAvailable(getApplicationContext())){
 
-
-            new LoadData().execute();
-
-        }else{
-
-            toastTool(getApplicationContext(),getResources().getString(R.string.no_internet));
-
-        }
     }
 
 

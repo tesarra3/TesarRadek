@@ -53,4 +53,6 @@
     <string name="saturday">Saturday</string>
     <string name="sunday">Sunday</string>
 
+    <string name="global_general_error">Whoops! Something went wrong</string>
+
 </resources>

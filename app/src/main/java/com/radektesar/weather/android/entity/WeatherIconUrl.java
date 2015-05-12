@@ -1,10 +1,10 @@
 
-package com.radektesar.weather.android.client.response;
+package com.radektesar.weather.android.entity;
 
 
 import com.google.gson.annotations.Expose;
 
-public class WeatherIconUrl_ {
+public class WeatherIconUrl {
 
     @Expose
     private String value;
